@@ -19,9 +19,7 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.close(),
   },
   window = {
-          completion = {
-        border = { '', '', '', '', '', '', '', '' },
-        winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
+          completion = { border = { '', '', '', '', '', '', '', '' }, winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
         winblend = vim.o.pumblend,
         scrolloff = 0,
         col_offset = 0,
@@ -107,7 +105,7 @@ formatting = {
 
 -- Ajustar el tamaño de la ventana flotante para hover
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "double",  -- Estilo del borde
+  border = "rounded",  -- Estilo del borde
   max_width = 60,       -- Ancho máximo de la ventana flotante
   max_height = 20,      -- Alto máximo de la ventana flotante
 })
@@ -128,6 +126,7 @@ local lsp_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
   -- vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
   vim.keymap.set('n', '<leader>k', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+  vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
 lsp_zero.extend_lspconfig({
@@ -136,6 +135,8 @@ lsp_zero.extend_lspconfig({
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
+require("mason").setup()
+require("mason-lspconfig").setup()
 require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').pyright.setup({})
 require('lspconfig').lua_ls.setup({})

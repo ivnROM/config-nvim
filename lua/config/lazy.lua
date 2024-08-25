@@ -22,17 +22,19 @@ vim.g.maplocalleader = "\\"
 
 local plugins = {
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	{ "blazkowolf/gruber-darker.nvim" }, 
+	{ "blazkowolf/gruber-darker.nvim" },
 	-- {'folke/tokyonight.nvim'},
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/nvim-cmp'}, 
+	{'hrsh7th/nvim-cmp'},
 	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	{'onsails/lspkind.nvim'},
 	{ "L3MON4D3/LuaSnip" },  -- Snippet engine
+    {"williamboman/mason.nvim"},
+    {"williamboman/mason-lspconfig.nvim"},
 }
-
+--
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = plugins,
@@ -42,6 +44,8 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+
 
 require("plugins.treesitter")
 require("plugins.colors")
