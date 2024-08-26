@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.o.relativenumber = true
+vim.wo.number = true
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 vim.opt.fillchars = { eob = " " }
 vim.opt.tabstop = 4
