@@ -21,19 +21,37 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 local plugins = {
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	{ "blazkowolf/gruber-darker.nvim" },
-	-- {'folke/tokyonight.nvim'},
-	{'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
-	{'neovim/nvim-lspconfig'},
-	{'hrsh7th/cmp-nvim-lsp'},
-	{'hrsh7th/nvim-cmp'},
-	{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-	{'onsails/lspkind.nvim'},
-	{ "L3MON4D3/LuaSnip" },  -- Snippet engine
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "blazkowolf/gruber-darker.nvim" },
+    -- {'folke/tokyonight.nvim'},
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
+    {'neovim/nvim-lspconfig'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/nvim-cmp'},
+    { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+    {'onsails/lspkind.nvim'},
+    { "L3MON4D3/LuaSnip" },  -- Snippet engine
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
     {"tpope/vim-fugitive"},
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    }
 }
 --
 -- Setup lazy.nvim

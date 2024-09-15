@@ -5,7 +5,7 @@ vim.opt.guicursor = "n-v-i-c:block-Cursor"
 vim.opt.fillchars = { eob = " " }
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true		
+vim.opt.expandtab = true
 
 local map = vim.keymap.set
 
@@ -35,3 +35,8 @@ map('n', '<C-u>', '<C-u>zz')
 
 -- cerrar buffers 
 map('n', '<leader>q', ':bw<CR>', { noremap = true, silent = true })
+
+-- guardar archivo
+map('n', '<C-M-w>', ':w<CR>')
+-- guardar y salir del archivo
+map('n', '<C-M-q>', ':wq!<CR>')
