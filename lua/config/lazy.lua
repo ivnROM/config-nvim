@@ -33,6 +33,7 @@ local plugins = {
 	{ "L3MON4D3/LuaSnip" },  -- Snippet engine
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
+    {"tpope/vim-fugitive"},
 }
 --
 -- Setup lazy.nvim
@@ -45,9 +46,8 @@ require("lazy").setup({
   checker = { enabled = true, notify = false},
 })
 
-
-
 require("plugins.treesitter")
 require("plugins.colors")
 require("plugins.lsp")
 require("plugins.telescope")
+require("plugins.vim-fugitive")

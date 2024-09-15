@@ -26,10 +26,12 @@ map('x', '<a-k>', ':m \'<-2<cr>gv=gv', { noremap = true, silent = true })
 map('n', '.', '\'', { noremap = true, silent = true })
 
 -- nuevas lineas con o y alt o
-vim.keymap.set('n', '<A-o>', 'm`o<Esc>``')
-vim.keymap.set('n', '<S-A-o>', 'm`O<Esc>``')
+map('n', '<A-o>', 'm`o<Esc>``')
+map('n', '<S-A-o>', 'm`O<Esc>``')
 
 -- bajar y subir codigo con texto centrado
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
+map('n', '<C-d>', '<C-d>zz')
+map('n', '<C-u>', '<C-u>zz')
 
+-- cerrar buffers 
+map('n', '<leader>q', ':bw<CR>', { noremap = true, silent = true })
