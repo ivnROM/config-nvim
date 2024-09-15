@@ -34,30 +34,13 @@ local plugins = {
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
     {"tpope/vim-fugitive"},
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        },
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-            },
-        },
-    }
+    { "folke/which-key.nvim", lazy = true},
 }
 --
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = plugins,
-  -- Configure any other settings here. See the documentation for more details.
+    spec = plugins,
+    -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
@@ -69,3 +52,4 @@ require("plugins.colors")
 require("plugins.lsp")
 require("plugins.telescope")
 require("plugins.vim-fugitive")
+require("plugins.which-key")
