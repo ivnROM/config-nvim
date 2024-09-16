@@ -23,6 +23,7 @@ vim.g.maplocalleader = "\\"
 local plugins = {
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { "blazkowolf/gruber-darker.nvim" },
+    { "ferdinandrau/lavish.nvim" },
     -- {'folke/tokyonight.nvim'},
     {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
     {'neovim/nvim-lspconfig'},
