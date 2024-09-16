@@ -1,3 +1,5 @@
+local terminal = require("config.terminal")
+
 vim.g.mapleader = " "
 vim.o.relativenumber = true
 vim.wo.number = true
@@ -40,3 +42,6 @@ map('n', '<leader>q', ':bw<CR>', { noremap = true, silent = true })
 map('n', '<C-M-w>', ':w<CR>')
 -- guardar y salir del archivo
 map('n', '<C-M-q>', ':wq!<CR>')
+
+-- abrir terminal
+vim.keymap.set('n', '<leader>to', terminal.open_floating_terminal, { noremap = true, silent = true })
