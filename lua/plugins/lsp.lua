@@ -144,3 +144,5 @@ require('lspconfig').pyright.setup({})
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').clangd.setup({})
 require('lspconfig').ts_ls.setup({})
+require('lspconfig').marksman.setup({})
+
