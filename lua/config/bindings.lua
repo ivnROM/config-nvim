@@ -1,4 +1,5 @@
 local terminal = require("config.terminal")
+local presets = require("config.filepresets")
 
 vim.g.mapleader = " "
 vim.o.relativenumber = true
@@ -45,3 +46,16 @@ map('n', '<C-M-q>', ':wq!<CR>')
 
 -- abrir terminal
 vim.keymap.set('n', '<leader>to', terminal.open_floating_terminal, { noremap = true, silent = true })
+
+-- determinar bindings de filepresets
+vim.keymap.set('n', '<leader>fph', function()
+  vim.api.nvim_put(presets.html_template, 'l', true, true)
+end, { desc = "html" })
+
+vim.keymap.set('n', '<leader>fpc', function()
+  vim.api.nvim_put(presets.css_template, 'l', true, true)
+end, { desc = "css" })
+
+vim.keymap.set('n', '<leader>fpj', function()
+  vim.api.nvim_put(presets.js_template, 'l', true, true)
+end, { desc = "js" })
