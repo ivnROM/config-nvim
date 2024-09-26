@@ -6,9 +6,31 @@ vim.o.relativenumber = true
 vim.wo.number = true
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 vim.opt.fillchars = { eob = " " }
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+-- vim.opt.tabstop = 4
+-- vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+-- identaciones para los distintos tipos de archivos
+-- para archivos js, ts, y html
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "typescript", "html" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+  end,
+})
+
+-- para el resto de archivos
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
+
 
 local map = vim.keymap.set
 
