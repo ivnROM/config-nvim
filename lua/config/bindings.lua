@@ -12,25 +12,16 @@ vim.opt.expandtab = true
 
 -- identaciones para los distintos tipos de archivos
 -- para archivos js, ts, y html
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "javascript", "typescript", "html" },
-  callback = function()
-    vim.opt_local.shiftwidth = 2
-    vim.opt_local.tabstop = 2
-    vim.opt_local.softtabstop = 2
-  end,
-})
-
--- para el resto de archivos
+-- mayoria de formatos
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
-  callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
-  end,
+  command = "setlocal shiftwidth=4 tabstop=4 softtabstop=4"
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "javascript", "typescript", "html" },
+  command = "setlocal shiftwidth=2 tabstop=2 softtabstop=2"
+})
 
 local map = vim.keymap.set
 
