@@ -20,31 +20,56 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+
 local plugins = {
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    { "blazkowolf/gruber-darker.nvim" },
-    { "ferdinandrau/lavish.nvim" },
-    -- {'folke/tokyonight.nvim'},
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-    {'onsails/lspkind.nvim'},
-    { "L3MON4D3/LuaSnip" },  -- Snippet engine
-    {"williamboman/mason.nvim"},
-    {"williamboman/mason-lspconfig.nvim"},
-    {"tpope/vim-fugitive"},
-    { "folke/which-key.nvim", lazy = true},
+    -- treesitter se carga cuando se abre cualquier buffer
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = "BufReadPost" },
+
+    -- theme cargado lazy, solo cuando necesites aplicarlo
+    { "blazkowolf/gruber-darker.nvim", lazy = true },
+
+    -- lavish cargado lazy igual que gruber-darker
+    { "ferdinandrau/lavish.nvim", lazy = true },
+
+    -- lsp-zero para la configuración de LSP, cargado cuando abres un archivo con un tipo soportado por LSP
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x', event = "BufReadPre" },
+    { 'neovim/nvim-lspconfig', lazy = true, event = "BufReadPre" },
+    { 'hrsh7th/cmp-nvim-lsp', lazy = true },
+    { 'hrsh7th/nvim-cmp', lazy = true },
+
+    -- telescope cargado al llamar a :Telescope o abrir el finder con <leader>f
+    { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" }, cmd = "Telescope" },
+
+    -- lspkind cargado lazy cuando cmp (completions) es requerido
+    { 'onsails/lspkind.nvim', lazy = true },
+
+    -- LuaSnip cargado cuando llamás algún comando de snippets
+    { "L3MON4D3/LuaSnip", lazy = true },
+
+    -- mason para gestionar servidores lsp, cargado cuando hacés algo relacionado con lsp
+    {"williamboman/mason.nvim", event = "BufReadPre" },
+    {"williamboman/mason-lspconfig.nvim", lazy = true },
+
+    -- fugitive cargado cuando llamás a un comando relacionado con git
+    { "tpope/vim-fugitive", cmd = { "Git", "Gdiffsplit", "Gblame" }, lazy = true },
+
+    -- which-key cargado solo cuando presionás una tecla de líder
+    { "folke/which-key.nvim", lazy = true, event = "VeryLazy" },
+
+    -- dap (debugging) cargado cuando se necesite
     { "mfussenegger/nvim-dap", dependencies = {
         "theHamsta/nvim-dap-virtual-text",
         "rcarriga/nvim-dap-ui",
         "mfussenegger/nvim-jdtls"
-    }
-    },
-    { "slugbyte/lackluster.nvim"},
-    { "olivercederborg/poimandres.nvim"},
+    }, lazy = true, cmd = "DapToggleBreakpoint" },
+
+    -- lackluster cargado cuando se llama al comando respectivo
+    { "slugbyte/lackluster.nvim", lazy = true },
+
+    -- poimandres cargado lazy
+    { "olivercederborg/poimandres.nvim", lazy = true },
 }
+
 --
 -- Setup lazy.nvim
 require("lazy").setup({
