@@ -36,6 +36,12 @@ local plugins = {
     {"williamboman/mason-lspconfig.nvim"},
     {"tpope/vim-fugitive"},
     { "folke/which-key.nvim", lazy = true},
+    { "mfussenegger/nvim-dap", dependencies = {
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+        "mfussenegger/nvim-jdtls"
+    }
+    },
     { "slugbyte/lackluster.nvim"},
     { "olivercederborg/poimandres.nvim"},
 }
@@ -53,6 +59,7 @@ require("lazy").setup({
 require("plugins.treesitter")
 require("plugins.colors")
 require("plugins.lsp")
+-- require("plugins.dap")
 require("plugins.telescope")
 require("plugins.vim-fugitive")
 require("plugins.which-key")
