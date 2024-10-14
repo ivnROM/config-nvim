@@ -36,6 +36,8 @@ local plugins = {
     {"williamboman/mason-lspconfig.nvim"},
     {"tpope/vim-fugitive"},
     { "folke/which-key.nvim", lazy = true},
+    { "slugbyte/lackluster.nvim"},
+    { "olivercederborg/poimandres.nvim"},
 }
 --
 -- Setup lazy.nvim
