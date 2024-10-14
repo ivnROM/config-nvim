@@ -20,6 +20,11 @@ wk.add({
   { "<leader>t", desc = "terminal open" }, -- proxy to window mappings
 
   { "<leader>g", group = "git" }, -- group
+  { "<leader>h", group = "harpoon" }, -- group
+  { "<leader>hh", desc = "ui" },
+  { "<leader>hm", desc = "mark" },
+  { "<leader>1", desc = "m1" },
+  { "<leader>2", desc = "m2" },
   { "<leader>gc", desc = "git commit" },
   { "<leader>gp", desc = "git push" },
   { "<leader>gl", desc = "git pull" },

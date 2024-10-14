@@ -68,6 +68,8 @@ local plugins = {
 
     -- poimandres cargado lazy
     { "olivercederborg/poimandres.nvim", lazy = true },
+
+    { "ThePrimeagen/harpoon", lazy = true },
 }
 
 --
@@ -88,3 +90,4 @@ require("plugins.lsp")
 require("plugins.telescope")
 require("plugins.vim-fugitive")
 require("plugins.which-key")
+require("plugins.harpoon")
