@@ -70,6 +70,12 @@ local plugins = {
     { "olivercederborg/poimandres.nvim", lazy = true },
 
     { "ThePrimeagen/harpoon", lazy = true },
+
+    { "echasnovski/mini.ai", lazy = true},
+    { "echasnovski/mini.animate", lazy = true},
+    { "echasnovski/mini.animate", lazy = true},
+    { "echasnovski/mini.patterns", lazy = true},
+
 }
 
 --
