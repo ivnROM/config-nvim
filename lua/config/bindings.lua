@@ -50,7 +50,7 @@ map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
 
 -- cerrar buffers 
-map('n', '<leader>q', ':bw<CR>', { noremap = true, silent = true })
+map('n', '<leader>q', ':q!<CR>', { noremap = true, silent = true })
 
 -- guardar archivo
 map('n', '<C-M-w>', ':w<CR>')

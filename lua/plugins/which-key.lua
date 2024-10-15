@@ -13,7 +13,9 @@ local wk = require("which-key")
 wk.add({
   { "<leader>f", group = "file" }, -- group
   { "<leader>ff", desc = "find file", mode = "n" },
-  { "<leader>fn", desc = "new file" },
+  { "<leader>fg", desc = "live grep", mode = "n" },
+  { "<leader>fb", desc = "buffers", mode = "n" },
+  -- { "<leader>fn", desc = "new file" },
 
   { "<leader>w", group = "windows" }, -- proxy to window mappings
   { "<leader>t", group = "terminal" }, -- proxy to window mappings
@@ -23,8 +25,6 @@ wk.add({
   { "<leader>h", group = "harpoon" }, -- group
   { "<leader>hh", desc = "ui" },
   { "<leader>hm", desc = "mark" },
-  { "<leader>1", desc = "m1" },
-  { "<leader>2", desc = "m2" },
   { "<leader>gc", desc = "git commit" },
   { "<leader>gp", desc = "git push" },
   { "<leader>gl", desc = "git pull" },
@@ -35,5 +35,11 @@ wk.add({
   { "<leader>q", desc = "close buffer" }, -- keymap code action
   { "<C-M-w>", desc = "save" }, -- keymap code action
   { "<C-M-q>", desc = "save and quit" }, -- keymap code action
+
+  { "<leader>1", desc = "1" },
+  { "<leader>2", desc = "2" },
+  { "<leader>3", desc = "3" },
+  { "<leader>4", desc = "4" },
+  { "<leader>5", desc = "5" },
 })
 
