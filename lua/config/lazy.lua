@@ -72,9 +72,9 @@ local plugins = {
     { "ThePrimeagen/harpoon", lazy = true },
 
     { "echasnovski/mini.ai", lazy = true},
-    { "echasnovski/mini.animate", lazy = true},
-    { "echasnovski/mini.animate", lazy = true},
-    { "echasnovski/mini.patterns", lazy = true},
+    -- { "echasnovski/mini.animate", lazy = true},
+    -- { "echasnovski/mini.animate", lazy = true},
+    { "echasnovski/mini.hipatterns", lazy = true},
 
 }
 
@@ -93,7 +93,8 @@ require("plugins.treesitter")
 require("plugins.colors")
 require("plugins.lsp")
 -- require("plugins.dap")
-require("plugins.telescope")
+require("plugins.telescope") 
 require("plugins.vim-fugitive")
 require("plugins.which-key")
 require("plugins.harpoon")
+require("plugins.hipatterns")
