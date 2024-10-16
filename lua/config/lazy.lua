@@ -74,6 +74,7 @@ local plugins = {
     { "echasnovski/mini.ai", lazy = true},
     -- { "echasnovski/mini.animate", lazy = true},
     -- { "echasnovski/mini.animate", lazy = true},
+    { "echasnovski/mini.pairs", lazy = true},
     { "echasnovski/mini.hipatterns", lazy = true},
 
 }
@@ -98,3 +99,5 @@ require("plugins.vim-fugitive")
 require("plugins.which-key")
 require("plugins.harpoon")
 require("plugins.hipatterns")
+require("plugins.pairs")
+require("plugins.ai")
