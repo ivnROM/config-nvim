@@ -145,4 +145,4 @@ require('lspconfig').lua_ls.setup({})
 require('lspconfig').clangd.setup({})
 require('lspconfig').ts_ls.setup({})
 require('lspconfig').marksman.setup({})
-
+require('lspconfig').gopls.setup({})
