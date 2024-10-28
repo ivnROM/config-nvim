@@ -72,3 +72,5 @@ end, { desc = "css" })
 vim.keymap.set('n', '<leader>fpj', function()
   vim.api.nvim_put(presets.js_template, 'l', true, true)
 end, { desc = "js" })
+
+map('n', '<leader>tt', ':term<CR>')

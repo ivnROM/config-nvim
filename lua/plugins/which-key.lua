@@ -19,7 +19,8 @@ wk.add({
 
   { "<leader>w", group = "windows" }, -- proxy to window mappings
   { "<leader>t", group = "terminal" }, -- proxy to window mappings
-  { "<leader>t", desc = "terminal open" }, -- proxy to window mappings
+  { "<leader>to", desc = "terminal popup" }, -- proxy to window mappings
+  { "<leader>tt", desc = "terminal full" },
 
   { "<leader>g", group = "git" }, -- group
   { "<leader>h", group = "harpoon" }, -- group
