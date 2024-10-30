@@ -138,12 +138,27 @@ lsp_zero.extend_lspconfig({
 
 require("mason").setup()
 require("mason-lspconfig").setup()
-require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').jdtls.setup({})
-require('lspconfig').pyright.setup({})
-require('lspconfig').lua_ls.setup({})
--- require('lspconfig').clangd.setup({})
-require('lspconfig').ccls.setup({})
-require('lspconfig').ts_ls.setup({})
-require('lspconfig').marksman.setup({})
-require('lspconfig').gopls.setup({})
+
+local lspconfig = require('lspconfig')
+
+lspconfig.rust_analyzer.setup({})
+lspconfig.jdtls.setup({})
+lspconfig.pyright.setup({})
+lspconfig.lua_ls.setup({})
+lspconfig.ccls.setup{}
+lspconfig.ts_ls.setup({})
+lspconfig.marksman.setup({})
+lspconfig.gopls.setup({})
+
+lspconfig.ccls.setup {
+  init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      excludeArgs = { "-frounding-math"} ;
+    };
+  }
+}
+
