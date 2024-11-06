@@ -149,6 +149,7 @@ lspconfig.ccls.setup{}
 lspconfig.ts_ls.setup({})
 lspconfig.marksman.setup({})
 lspconfig.gopls.setup({})
+lspconfig.zls.setup({})
 
 lspconfig.ccls.setup {
   init_options = {
